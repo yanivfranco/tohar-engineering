@@ -6,29 +6,11 @@ import { Container } from "react-bootstrap"
 export function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.png" }) {
+      citylines: file(relativePath: { eq: "city-lines.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
             ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      insta: file(relativePath: { eq: "insta.png" }) {
-        childImageSharp {
-          fixed(quality: 100) {
-            aspectRatio
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-
-      facebook: file(relativePath: { eq: "facebook.png" }) {
-        childImageSharp {
-          fixed(quality: 100) {
-            aspectRatio
-            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -38,9 +20,6 @@ export function Footer() {
   return (
     <section id="footer" className="ptb-40 footer">
       <Container className="footer_container">
-        <div className="footer_logo">
-          <GatsbyImage fluid={data.logo.childImageSharp.fluid} />
-        </div>
         <div className="footer_text">
           <p>החרושת 8 אור יהודה, מיקוד: 6037576</p>
           <div className="seperator" />
@@ -50,12 +29,12 @@ export function Footer() {
           <div className="seperator" />
           <p> info@tohargroup.com</p>
           <div className="seperator" />
-          <a href=" https://www.facebook.com/TGToharGroup/" target="__blank">
-            <GatsbyImage fixed={data.facebook.childImageSharp.fixed} />
-          </a>
-          <a href="https://www.instagram.com/tohargroup/" target="__blank">
-            <GatsbyImage fixed={data.insta.childImageSharp.fixed} />
-          </a>
+        </div>
+        <div className="footer_citylines">
+          <GatsbyImage
+            fluid={data.citylines.childImageSharp.fluid}
+            imgStyle={{ transform: "scale(1.2)" }}
+          />
         </div>
       </Container>
     </section>

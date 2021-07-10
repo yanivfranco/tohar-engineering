@@ -1,4 +1,6 @@
-import React, { Fragment, useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import GatsbyImage from "gatsby-image"
+import React, { Fragment } from "react"
 
 export const links = [
   { label: "השירותים שלנו", id: "#about" },
@@ -9,6 +11,27 @@ export const links = [
 ]
 
 export function LinksMenu() {
+  const data = useStaticQuery(graphql`
+    query {
+      facebook: file(relativePath: { eq: "facebook.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            aspectRatio
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      whatsapp: file(relativePath: { eq: "whatsapp.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            aspectRatio
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div className="linksMenu">
       <div className="linksMenu_container">
@@ -20,6 +43,22 @@ export function LinksMenu() {
             <div className="linksMenu_seperator" />
           </Fragment>
         ))}
+
+        <a
+          className="linksMenu_icon"
+          href="http://www.facebook.com"
+          target="__blank"
+        >
+          <GatsbyImage fluid={data.facebook.childImageSharp.fluid} />
+        </a>
+
+        <a
+          className="linksMenu_icon"
+          href="http://www.facebook.com"
+          target="__blank"
+        >
+          <GatsbyImage fluid={data.whatsapp.childImageSharp.fluid} />
+        </a>
       </div>
     </div>
   )

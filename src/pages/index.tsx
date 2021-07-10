@@ -17,12 +17,13 @@ const IndexPage = () => (
   <div className="rtl">
     <SEO url="www.tohareng.co.il" title="טוהר ייזום והנדסה" />
     <Header />
-    {/* <Hero />
-    <About />
+    <Hero />
+    {/* <About />
     <Owners />
     <Companies />
     <Graph />
     <Clients /> */}
+    <Header />
     <Footer />
   </div>
 )

@@ -1,6 +1,5 @@
 .linksMenu {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   margin: auto;
 
@@ -11,8 +10,9 @@
     justify-content: center;
     border-top: 1px black solid;
     border-bottom: 1px black solid;
-    max-width: 650px;
-margin: auto;
+    max-width: 750px;
+    margin: auto;
+    padding: 10px 0px;
 
     .linksMenu_item {
       display: flex;
@@ -26,6 +26,7 @@ margin: auto;
         cursor: pointer;
       }
     }
+
     .linksMenu_seperator {
       width: 1px;
       background-color: $dark-blue;
@@ -37,6 +38,11 @@ margin: auto;
       &:last-child {
         display: none;
       }
+    }
+
+    .linksMenu_icon {
+      width: 30px;
+      margin: 0px 10px;
     }
   }
 }

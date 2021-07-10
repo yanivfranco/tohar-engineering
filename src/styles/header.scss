@@ -3,10 +3,10 @@
   display: flex;
   height: 100px;
   color: white;
+  margin-top: 50px;
 
   .header_container {
     max-width: 1200px;
-    width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -16,16 +16,8 @@
     height: 100%;
   }
 
-  .header_logo_container {
-    display: flex;
-    padding: 0px 20px;
-    svg {
-      margin: auto;
-    }
-  }
-
   .header_logo {
-    width: 320px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
   }

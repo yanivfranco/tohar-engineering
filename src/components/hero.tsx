@@ -8,7 +8,16 @@ export function Hero() {
   const { width } = useWindowSize()
   const data = useStaticQuery(graphql`
     query {
-      city: file(relativePath: { eq: "city.jpg" }) {
+      floor: file(relativePath: { eq: "floor.png" }) {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 2000) {
+            aspectRatio
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      cube: file(relativePath: { eq: "3d-cube.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 2000) {
             aspectRatio
@@ -19,40 +28,28 @@ export function Hero() {
     }
   `)
 
-  const Dot = (left: number) => (
-    <div style={{ left }} className="hero_dot"></div>
-  )
-  const generateDots = () => {
-    const dots = []
-    for (let i = 0; i < 30; i++) {
-      const left = Math.random() * width
-      dots.push(Dot(left))
-    }
-
-    return dots
-  }
-
   return (
     <div className="hero">
-      <div className="hero_logo">
+      <div className="hero_bg">
         <GatsbyImage
           style={{ height: "100%" }}
           imgStyle={{ objectFit: "cover" }}
-          fluid={data.city.childImageSharp.fluid}
+          fluid={data.floor.childImageSharp.fluid}
         />
       </div>
+
       <Container>
         <div className="hero_text_container">
           <div className="hero_text">
-            <p>
-              'קבוצת טוהר' מפתחת ומיישמת מודלים ליצירת סביבה בטוחה, נקיה
-              ומתקדמת, תוך שימוש בטכנולוגיה ובהעצמת ההון האנושי הנמצא במרכז
-              הקבוצה.
-            </p>
+            <div>פתרונות סינרגטיים ומדויקים</div>
+            <div className="hero_text_margin">בתחום התשתית והבניה</div>
+          </div>
+
+          <div className="hero_cube">
+            <GatsbyImage fluid={data.cube.childImageSharp.fluid} />
           </div>
         </div>
       </Container>
-      {generateDots()}
     </div>
   )
 }
