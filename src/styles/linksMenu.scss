@@ -9,11 +9,15 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    margin-right: 20px;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    max-width: 650px;
+margin: auto;
+
     .linksMenu_item {
       display: flex;
       margin: 3px;
-      color: $dark-blue;
+      color: $black;
       font-weight: 500;
       font-size: 20px;
 

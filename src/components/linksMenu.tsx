@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react"
 
 export const links = [
-  { label: "אודות", id: "#about" },
-  { label: "בעלי הקבוצה", id: "#owners" },
-  { label: "חברות בת", id: "#relatedCompanies" },
-  { label: "צור קשר", id: "#contact" },
+  { label: "השירותים שלנו", id: "#about" },
+  { label: "חזון", id: "#owners" },
+  { label: "אודותנו", id: "#relatedCompanies" },
+  { label: "פרויקטים לדוגמה", id: "#contact" },
+  { label: "הצהרת נגישות", id: "#contact" },
 ]
 
 export function LinksMenu() {

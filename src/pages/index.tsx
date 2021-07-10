@@ -15,15 +15,14 @@ import "animate.css"
 
 const IndexPage = () => (
   <div className="rtl">
-    {/* <ScrollArrow /> */}
-    <SEO url="www.tohargroup.co.il" title="קבוצת טוהר" />
+    <SEO url="www.tohareng.co.il" title="טוהר ייזום והנדסה" />
     <Header />
-    <Hero />
+    {/* <Hero />
     <About />
     <Owners />
     <Companies />
     <Graph />
-    <Clients />
+    <Clients /> */}
     <Footer />
   </div>
 )
