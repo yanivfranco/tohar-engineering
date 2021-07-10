@@ -1,0 +1,13 @@
+button {
+  width: 100%;
+  outline: none;
+  background-color: $dark-grey;
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

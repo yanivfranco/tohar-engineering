@@ -1,0 +1,10 @@
+.bottomTriangle {
+  background-color: inherit;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 25px);
+  z-index: 2;
+}

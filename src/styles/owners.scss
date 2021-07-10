@@ -1,0 +1,35 @@
+.owners {
+  text-align: right;
+  background-color: $gray;
+  color: $dark-blue;
+  .owners_personsContainer {
+    max-width: 900px;
+    margin: auto;
+  }
+  .owners_person {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    .owners_personImage {
+      max-width: 200px;
+      margin: auto;
+    }
+    p {
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $sm) {
+  .owners {
+    .owners_person {
+      margin-bottom: 40px;
+
+      .owners_personImage {
+        max-width: 150px;
+      }
+    }
+  }
+}

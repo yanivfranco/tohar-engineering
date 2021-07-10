@@ -1,0 +1,44 @@
+.linksMenu {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: auto;
+
+  .linksMenu_container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20px;
+    .linksMenu_item {
+      display: flex;
+      margin: 3px;
+      color: $dark-blue;
+      font-weight: 500;
+      font-size: 20px;
+
+      &:hover {
+        color: $light-orange;
+        cursor: pointer;
+      }
+    }
+    .linksMenu_seperator {
+      width: 1px;
+      background-color: $dark-blue;
+      height: 20px;
+      margin: auto;
+      margin-right: 10px;
+      margin-left: 10px;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $xl) {
+  .linksMenu {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+.ourClients {
+  h2 {
+    width: 700px;
+    margin: auto;
+  }
+
+  .ourClients_logoContainer {
+    display: flex;
+    flex-direction: column;
+    .logoContainer_logo {
+      margin: auto;
+      width: 100%;
+    }
+  }
+}
