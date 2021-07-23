@@ -1,26 +1,22 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
-import GatsbyImage from "gatsby-image"
 import Fade from "react-reveal/Fade"
+import { Title } from "./ui/title"
+import { Image } from "./ui/image"
 
 export function Clients() {
   const data = useStaticQuery(graphql`
     query {
-      citylines: file(relativePath: { eq: "citylines.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 5000) {
-            aspectRatio
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      clients: file(relativePath: { eq: "clients.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 5000) {
-            aspectRatio
-            ...GatsbyImageSharpFluid
+      allFile(filter: { relativeDirectory: { eq: "clients" } }) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
@@ -32,28 +28,19 @@ export function Clients() {
       <Container>
         <Row>
           <Col>
-            <div className="clients_logos">
-              <Fade bottom unmountOnExit mountOnEnter>
-                <GatsbyImage
-                  style={{ height: "100%" }}
-                  imgStyle={{ objectFit: "cover" }}
-                  fluid={data.clients.childImageSharp.fluid}
-                />
-              </Fade>
-            </div>
+            <Title className="clients_title">לקוחות</Title>
           </Col>
         </Row>
+        <Row>
+          {data.allFile.edges.map((image, i) => (
+            <Col xs={12} lg>
+              <div className="clients_image vc">
+                <Image image={image.node} />
+              </div>
+            </Col>
+          ))}
+        </Row>
       </Container>
-
-      <div className="clients_city">
-        <Fade bottom>
-          <GatsbyImage
-            style={{ height: "100%" }}
-            imgStyle={{ objectFit: "cover" }}
-            fluid={data.citylines.childImageSharp.fluid}
-          />
-        </Fade>
-      </div>
     </section>
   )
 }

@@ -1,0 +1,22 @@
+.vision {
+  width: 100%;
+  background-color: $dark-blue;
+  color: white;
+
+  p {
+    padding: 0px 180px;
+    line-height: 200%;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $lg) {
+  .vision {
+    p {
+      padding: 0px 20px;
+      line-height: 200%;
+      font-size: 16px;
+    }
+  }
+}

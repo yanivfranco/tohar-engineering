@@ -1,47 +1,25 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
-import GatsbyImage from "gatsby-image"
 import Fade from "react-reveal/Fade"
+import { Title } from "./ui/title"
+import GatsbyImage from "gatsby-image"
+import { Image } from "./ui/image"
 
 export function Owners() {
   const data = useStaticQuery(graphql`
     query {
-      citylines: file(relativePath: { eq: "team/citylines.png" }) {
+      boaz: file(relativePath: { eq: "founders/boaz.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
             ...GatsbyImageSharpFluid
           }
         }
       }
-      benzi: file(relativePath: { eq: "team/benzi.png" }) {
+      benzi: file(relativePath: { eq: "founders/benzi.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            aspectRatio
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      haim: file(relativePath: { eq: "team/haim.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            aspectRatio
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      menashe: file(relativePath: { eq: "team/menashe.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            aspectRatio
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      udi: file(relativePath: { eq: "team/udi.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
             ...GatsbyImageSharpFluid
           }
@@ -50,60 +28,43 @@ export function Owners() {
     }
   `)
 
-  const persons = [
+  const content = [
     {
-      name: "ניצב בדימוס",
-      title: 'בנצי סאו, יו"ר',
-      image: (
-        <GatsbyImage
-          fluid={data?.benzi?.childImageSharp.fluid}
-          alt="תמונת פנים של יושב ראש החברה"
-        />
-      ),
+      title: "בועז טוביה",
+      image: data.boaz,
+      text: `מנכ"ל טוהר ייזום והנדסה, עוסק ומנהל בתחום התשתיות והבניה למעלה משלושה עשורים. הוותק,הניסיון הנצבר בתפקידי ניהול ביצוע, פרויקטים, חטיבות וחברות כדוגמת "רולידר' ו 'אקרשטיין', מאפשר לבועז להוביל במקצוענות את החברה, ולספק מענה לכל צורך תכנוני, הנדסי וביצועי.`,
     },
     {
-      name: "חיים מורד",
-      image: (
-        <GatsbyImage
-          fluid={data?.haim?.childImageSharp.fluid}
-          alt="תמונת פנים של המנכל"
-        />
-      ),
-    },
-    {
-      name: "מנשה מורד",
-      image: (
-        <GatsbyImage
-          fluid={data?.menashe?.childImageSharp.fluid}
-          alt="תמונת פנים של מנהל פיתוח עסקי"
-        />
-      ),
-    },
-    {
-      name: "אודי יונה",
-      image: (
-        <GatsbyImage
-          fluid={data?.udi?.childImageSharp.fluid}
-          alt="תמונת פנים של מנהל פרוקטים"
-        />
-      ),
+      title: "בנצי סאו",
+      image: data.benzi,
+      text: ``,
     },
   ]
 
   return (
-    <section id="owners" className="ptb-40 owners">
+    <section className="owners ptb-40">
       <Container>
-        <Row className="owners_personsContainer">
-          {persons.map((person, i) => (
-            <Col xs={12} sm={4} lg className="owners_person">
-              <Fade bottom>
-                <div className="owners_personImage">{person.image}</div>
-                <p>{person.name}</p>
-                <p>{person.title}</p>
+        {content.map((item, i) => (
+          <Row className="owner_container">
+            <Col lg={3} xs={12}>
+              <Fade bottom delay={320}>
+                <div className="owners_image">
+                  <Image
+                    image={item.image}
+                    horizontalPosition="right"
+                    verticalPosition="top"
+                  />
+                </div>
               </Fade>
             </Col>
-          ))}
-        </Row>
+            <Col>
+              <p>
+                <span>{item.title},</span>
+                {item.text}
+              </p>
+            </Col>
+          </Row>
+        ))}
       </Container>
     </section>
   )

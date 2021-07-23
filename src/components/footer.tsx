@@ -30,13 +30,8 @@ export function Footer() {
           <p> info@tohargroup.com</p>
           <div className="seperator" />
         </div>
-        <div className="footer_citylines">
-          <GatsbyImage
-            fluid={data.citylines.childImageSharp.fluid}
-            imgStyle={{ transform: "scale(1.2)" }}
-          />
-        </div>
       </Container>
+      <div className="footer_citylines" />
     </section>
   )
 }

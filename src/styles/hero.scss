@@ -18,15 +18,16 @@ $elements: 30;
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
     .hero_text {
       color: black;
       height: 100%;
       z-index: 2;
       font-size: 24px;
       font-weight: 500;
-      max-width: 500px;
+      max-width: 600px;
       text-align: start;
-      padding: 40px 60px;
+      padding: 40px 10px;
 
       .hero_text_margin {
         margin-right: 100px;
@@ -36,8 +37,11 @@ $elements: 30;
 
   .hero_bg {
     position: absolute;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+    background-image: url("../images/floor.png");
+    background-size: cover;
+    height: 300px;
   }
 
   .hero_cube {
@@ -45,18 +49,12 @@ $elements: 30;
   }
 }
 
-@media only screen and (max-width: $lg) {
+@media only screen and (max-width: $md) {
   .hero {
-    height: 300px;
-  }
-}
-
-@keyframes scrollUp {
-  from {
-    bottom: -20px;
-  }
-
-  to {
-    bottom: 110%;
+    height: 600px;
+    .hero_text {
+      width: 100%;
+      text-align: center !important;
+    }
   }
 }

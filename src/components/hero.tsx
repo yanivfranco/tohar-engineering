@@ -2,10 +2,9 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import GatsbyImage from "gatsby-image"
 import { Container } from "react-bootstrap"
-import useWindowSize from "../hooks/useWindowSize"
+import Fade from "react-reveal/Fade"
 
 export function Hero() {
-  const { width } = useWindowSize()
   const data = useStaticQuery(graphql`
     query {
       floor: file(relativePath: { eq: "floor.png" }) {
@@ -30,24 +29,22 @@ export function Hero() {
 
   return (
     <div className="hero">
-      <div className="hero_bg">
-        <GatsbyImage
-          style={{ height: "100%" }}
-          imgStyle={{ objectFit: "cover" }}
-          fluid={data.floor.childImageSharp.fluid}
-        />
-      </div>
+      <div className="hero_bg"></div>
 
       <Container>
         <div className="hero_text_container">
-          <div className="hero_text">
-            <div>פתרונות סינרגטיים ומדויקים</div>
-            <div className="hero_text_margin">בתחום התשתית והבניה</div>
-          </div>
+          <Fade bottom>
+            <div className="hero_text">
+              <div>פתרונות סינרגטיים ומדויקים</div>
+              <div className="hero_text_margin">בתחום התשתית והבניה</div>
+            </div>
+          </Fade>
 
-          <div className="hero_cube">
-            <GatsbyImage fluid={data.cube.childImageSharp.fluid} />
-          </div>
+          <Fade bottom delay={200}>
+            <div className="hero_cube">
+              <GatsbyImage fluid={data.cube.childImageSharp.fluid} />
+            </div>
+          </Fade>
         </div>
       </Container>
     </div>

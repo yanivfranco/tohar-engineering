@@ -1,27 +1,51 @@
 .about {
   width: 100%;
-  height: 100%;
-  padding-bottom: 0;
-  font-weight: 500;
+  background-color: #d8d7cc;
+  color: black;
+  overflow: hidden;
 
-  p {
-    padding: 0px 100px;
-    line-height: 200%;
-    font-size: 20px;
+  .about_imageContainer {
+    height: 100%;
+    .about_image {
+      width: 100%;
+      left: 60px;
+      position: relative;
+    }
   }
 
-  .about_city {
-    margin-top: 30px;
-    height: 100px;
+  .about_content {
+    .title {
+      text-align: start;
+      h2 {
+        margin-right: 0;
+        border-bottom: 1px solid $dark-blue;
+      }
+    }
+
+    p {
+      line-height: 200%;
+      font-size: 20px;
+      text-align: start;
+    }
   }
 }
 
 @media only screen and (max-width: $lg) {
   .about {
-    p {
-      padding: 0px 10px;
-      line-height: 200%;
-      font-size: 16px;
+    .about_imageContainer {
+      .about_image {
+        width: 200px;
+        left: 0;
+        position: relative;
+      }
+    }
+
+    .about_content {
+      p {
+        padding: 0px 20px;
+        line-height: 200%;
+        font-size: 16px;
+      }
     }
   }
 }

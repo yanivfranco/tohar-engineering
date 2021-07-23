@@ -1,0 +1,39 @@
+.services {
+  width: 100%;
+
+  .title {
+    h2 {
+      border-bottom: 1px solid $dark-blue;
+    }
+  }
+
+  .service_container {
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 10px;
+
+    .services_image {
+      margin-bottom: 10px;
+    }
+
+    .services_title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .services_text {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: $lg) {
+  .vision {
+    p {
+      padding: 0px 20px;
+      line-height: 200%;
+      font-size: 16px;
+    }
+  }
+}

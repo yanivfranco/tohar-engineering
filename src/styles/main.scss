@@ -5,18 +5,21 @@
 @import "./variables.scss";
 @import "./general.scss";
 
+// Sections
+@import "./header.scss";
+@import "./hero.scss";
+@import "./vision.scss";
+@import "./services.scss";
+@import "./about.scss";
+@import "./owners.scss";
+@import "./projects.scss";
+@import "./clients.scss";
+@import "./footer.scss";
+
 // Components
 @import "./mobileMenu.scss";
 @import "./linksMenu.scss";
 @import "./bottomTriangle.scss";
 @import "./button.scss";
-
-// Sections
-@import "./header.scss";
-@import "./hero.scss";
-// @import "./about.scss";
-// @import "./owners.scss";
-// @import "./companies.scss";
-// @import "./graph.scss";
-// @import "./clients.scss";
-@import "./footer.scss";
+@import "./title.scss";
+@import "./image.scss";

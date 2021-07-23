@@ -1,0 +1,35 @@
+.image {
+  position: relative;
+  .image_square {
+    content: "";
+    width: 35%;
+    height: 35%;
+    background-color: $light-blue;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &.left {
+    .image_square {
+      left: calc(0px - 4%);
+    }
+  }
+
+  &.right {
+    .image_square {
+      right: calc(0px - 4%);
+    }
+  }
+
+  &.top {
+    .image_square {
+      top: calc(0px - 4%);
+    }
+  }
+
+  &.bottom {
+    .image_square {
+      bottom: calc(0px - 4%);
+    }
+  }
+}
