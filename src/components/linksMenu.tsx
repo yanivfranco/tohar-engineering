@@ -3,11 +3,11 @@ import GatsbyImage from "gatsby-image"
 import React, { Fragment } from "react"
 
 export const links = [
-  { label: "השירותים שלנו", id: "#about" },
-  { label: "חזון", id: "#owners" },
-  { label: "אודותנו", id: "#relatedCompanies" },
-  { label: "פרויקטים לדוגמה", id: "#contact" },
-  { label: "הצהרת נגישות", id: "#contact" },
+  { label: "השירותים שלנו", id: "#services" },
+  { label: "חזון", id: "#vision" },
+  { label: "אודותנו", id: "#about" },
+  { label: "פרויקטים לדוגמה", id: "#projects" },
+  { label: "הצהרת נגישות", id: "#accesability" },
 ]
 
 export function LinksMenu() {

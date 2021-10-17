@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import Fade from "react-reveal/Fade"
 import { Title } from "./ui/title"
 import GatsbyImage from "gatsby-image"
-import { Image } from "./ui/image"
+import Image from "./ui/image"
 
 export function Owners() {
   const data = useStaticQuery(graphql`

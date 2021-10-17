@@ -7,12 +7,13 @@ import { Hero } from "../components/hero"
 import { Owners } from "../components/owners"
 import { Services } from "../components/services"
 import SEO from "../components/seo"
-import ScrollArrow from "../components/scrollArrow"
+import { About } from "../components/about"
+import { Projects } from "../components/projects"
 
 import "../styles/main.scss"
 import "animate.css"
-import { About } from "../components/about"
-import { Projects } from "../components/projects"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const IndexPage = () => (
   <div className="rtl">

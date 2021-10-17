@@ -1,15 +1,13 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
-import Fade from "react-reveal/Fade"
 import { Title } from "./ui/title"
-import GatsbyImage from "gatsby-image"
-import { Image } from "./ui/image"
+import Project from "./project"
 
 export function Projects() {
   const data = useStaticQuery(graphql`
     query {
-      project1: file(relativePath: { eq: "project1.png" }) {
+      project1: file(relativePath: { eq: "projects/project1-1.jpeg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
@@ -17,7 +15,7 @@ export function Projects() {
           }
         }
       }
-      project2: file(relativePath: { eq: "project2.png" }) {
+      project2: file(relativePath: { eq: "projects/project2-1.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
@@ -25,7 +23,7 @@ export function Projects() {
           }
         }
       }
-      project3: file(relativePath: { eq: "project3.png" }) {
+      project3: file(relativePath: { eq: "projects/project3-1.jpeg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 5000) {
             aspectRatio
@@ -38,19 +36,20 @@ export function Projects() {
 
   const content = [
     {
-      title: "פרויקט לדוגמה",
+      title: "הקמת קירות אקוסטים עם חברת אקרשטיין",
       text: `טקסט לדוגמה`,
-      image: data.project1,
+      images: [data.project1, data.project1, data.project1],
     },
     {
-      title: "פרויקט לדוגמה",
+      title: "ביצוע קו ביוב בכביש 444 נווה ימין-צומת אייל עם חברת דניה סיבוס",
       text: `טקסט לדוגמה`,
-      image: data.project2,
+      images: [data.project2, data.project2, data.project2],
     },
     {
-      title: "פרויקט לדוגמה",
+      title:
+        "קונטיינרים ממוגנים לאזור חומרים מסוכנים בנמל המפרץ (נמל חיפה החדש) לחברת SIPG",
       text: `טקסט לדוגמה`,
-      image: data.project3,
+      images: [data.project3, data.project3, data.project3],
     },
   ]
 
@@ -66,19 +65,11 @@ export function Projects() {
         <Row>
           {content.map((item, i) => (
             <Col key={i} className="project_container" lg={4} xs={12}>
-              <Fade bottom delay={320}>
-                <div className="projects_image">
-                  <Image
-                    image={item.image}
-                    horizontalPosition="right"
-                    verticalPosition="top"
-                  />
-                </div>
-                <p>
-                  <div className="project_title">{item.title}</div>
-                  {item.text}
-                </p>
-              </Fade>
+              <Project
+                text={item.text}
+                title={item.title}
+                images={item.images}
+              />
             </Col>
           ))}
         </Row>

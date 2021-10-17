@@ -17,15 +17,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Tohar Group",
-        short_name: "Tohar Group",
-        start_url: "www.tohargroup.co.il",
+        name: "Tohar Engineering",
+        short_name: "Tohar Engineering",
+        start_url: "www.tohareng.co.il",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/logos/toharGroup.png", // This path is relative to the root of the site.
+        icon: "src/images/logo-big.png", // This path is relative to the root of the site.
       },
     },
     {

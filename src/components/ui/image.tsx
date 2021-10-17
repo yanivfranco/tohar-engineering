@@ -9,7 +9,7 @@ type Props = {
   horizontalPosition?: "left" | "right"
 }
 
-export function Image({
+function Image({
   horizontalPosition,
   image,
   verticalPosition,
@@ -28,3 +28,5 @@ export function Image({
     </div>
   )
 }
+
+export default Image

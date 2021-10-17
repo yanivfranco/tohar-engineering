@@ -18,6 +18,40 @@
     margin: auto;
     margin-bottom: 10px;
   }
+
+  .single_project {
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px black;
+    }
+  }
+}
+
+.single_project_modal {
+  padding: 30px;
+  text-align: right;
+
+  button {
+    max-width: 200px;
+    margin-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-prev,
+  .slick-next {
+    &::before {
+      color: black;
+    }
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
 }
 
 @media only screen and (max-width: $lg) {
