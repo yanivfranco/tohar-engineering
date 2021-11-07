@@ -46,7 +46,7 @@ export function LinksMenu() {
 
         <a
           className="linksMenu_icon"
-          href="http://www.facebook.com"
+          href="https://www.facebook.com/TGToharGroup/"
           target="__blank"
         >
           <GatsbyImage fluid={data.facebook.childImageSharp.fluid} />
@@ -54,7 +54,7 @@ export function LinksMenu() {
 
         <a
           className="linksMenu_icon"
-          href="http://www.facebook.com"
+          href="https://wa.me/0542034595"
           target="__blank"
         >
           <GatsbyImage fluid={data.whatsapp.childImageSharp.fluid} />

@@ -6,7 +6,7 @@ import { Title } from "./ui/title"
 
 export function Vision() {
   return (
-    <section className="vision ptb-40">
+    <section id="vision" className="vision ptb-40">
       <Container>
         <Row>
           <Col>

@@ -20,7 +20,7 @@ export function About() {
   `)
 
   return (
-    <section className="about ptb-40">
+    <section id="about" className="about ptb-40">
       <Container>
         <Row>
           <Col lg={3} xs={12}>

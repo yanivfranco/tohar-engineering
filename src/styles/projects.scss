@@ -1,6 +1,9 @@
 .projects {
+  direction: rtl !important;
   .project_container {
     margin: 60px 0px;
+    padding: 30px;
+    width: 100%;
 
     .project_title {
       font-weight: bold;
@@ -20,11 +23,24 @@
   }
 
   .single_project {
-    transition: $transition;
+    direction: rtl;
+    h6 {
+      margin-top: 10px;
+    }
+    p {
+      font-size: 16px;
+    }
+
+    .single_project_image {
+      transition: $transition;
+    }
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0px 0px 10px black;
+
+      .single_project_image {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.473);
+      }
     }
   }
 }
@@ -32,10 +48,32 @@
 .single_project_modal {
   padding: 30px;
   text-align: right;
+  direction: rtl;
+  position: relative;
+
+  .small_pictures {
+    margin-top: 30px;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .citylines {
+    background-image: url("../images/city-lines.png");
+    background-size: cover;
+    height: 70px;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+  }
 
   button {
     max-width: 200px;
+    margin: auto;
     margin-top: 30px;
+    margin-left: 0;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -57,7 +95,6 @@
 @media only screen and (max-width: $lg) {
   .projects {
     .project_container {
-      max-width: 300px;
       margin: auto;
     }
   }

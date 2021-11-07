@@ -47,7 +47,7 @@ export function Services() {
       title: "הנדסה ובינוי",
       image: data.about1,
       text:
-        "הנחת קווים תת קרקעיים לצרכי זרימה והובלת תשתיות, עבודות פיתוח ובניה, תכנון והקמת קירות אקוסטיים וקרקע משוריינת",
+        "התמחות בייזום ובינוי של מוסדות ציבוריים, בנייה פרטית, הקמת מגרשי ומתקני ספורט",
     },
     {
       title: "ניהול פרויקטים",
@@ -57,7 +57,7 @@ export function Services() {
   ]
 
   return (
-    <section className="services ptb-40">
+    <section id="services" className="services ptb-40">
       <Container>
         <Fade bottom delay={100}>
           <Row>

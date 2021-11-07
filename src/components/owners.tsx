@@ -37,12 +37,15 @@ export function Owners() {
     {
       title: "בנצי סאו",
       image: data.benzi,
-      text: ``,
+      text: `ניצב בדימוס, בן ציון (בנצי) סאו, הינו יו"ר 'TOHAR GROUP'.
+      בנצי כיהן בית היתר כממלא מקום מפכ"ל משטרת ישראל, סגן המפכ"ל, מפקד מחוז תל אביב ומפקד מחוז ירושלים.
+      בנצי הצטרף ל- TOHAR GROUP' בשנת 2019 ומאז מוביל עם מנהלות ומנהלי החברה את הקבוצה לצמיחה תוך שמירה על ערכיה ובראשם יושרה ואמינות, מקצוענות וחדשנות!
+      בנצי מביא עימו חשיבה וראיה אסטרטגית מובילה וממנף את היתרונות הסינרגטיים של חברות הקבוצה לטובת לקוחותינו.`,
     },
   ]
 
   return (
-    <section className="owners ptb-40">
+    <section id="owners" className="owners ptb-40">
       <Container>
         {content.map((item, i) => (
           <Row className="owner_container">
